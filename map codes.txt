@@ -1,0 +1,23 @@
+00 The Reef
+01 Musselforge Fitness
+02 Starfish Mainstage
+03 Humpback Pump Track
+04 Inkblot Art Academy
+05 Sturgeon Shipyard
+06 Moray Towers
+07 Port Mackerel
+08 Manta Maria
+09 Kelp Dome
+10 Snapper Canal
+11 Blackbelly Skatepark
+12 MakoMart
+13 Walleye Warehouse
+14 Shellendorf Institute
+15 Arowana Mall
+16 Goby Arena
+17 Piranha Pit
+18 Camp Triggerfish
+19 Wahoo World
+20 New Albacore Hotel
+21 Ancho-V Games
+22 Skipper Pavilion

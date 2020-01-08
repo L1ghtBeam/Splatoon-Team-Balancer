@@ -164,7 +164,7 @@ public class GameScript : MonoBehaviour
         alphaChange *= 4;
         alphaChange /= leaderboardScript.alpha.Count;
         bravoChange *= 4;
-        bravoChange /= leaderboardScript.alpha.Count;
+        bravoChange /= leaderboardScript.bravo.Count;
 
         // Apply to text
         alphaChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(alphaChange);
