@@ -160,18 +160,6 @@ public class GameScript : MonoBehaviour
         float alphaChange = MasterScript.CalculateMatchRewards(leaderboardScript.alpha, leaderboardScript.bravo, true, MasterScript.matchPower);
         float bravoChange = -alphaChange;
 
-        // Fix for uneven teams
-        alphaChange *= 4;
-        alphaChange /= leaderboardScript.alpha.Count;
-        bravoChange *= 4;
-        bravoChange /= leaderboardScript.bravo.Count;
-
-        // Apply to text
-        alphaChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(alphaChange);
-        alphaChangeText.SetActive(true);
-        bravoChangeText.GetComponent<TextMeshProUGUI>().text = "" + Mathf.Round(bravoChange);
-        bravoChangeText.SetActive(true);
-
         // Update Scores
         UpdateScores(alphaChange, bravoChange, true);
     }
@@ -180,10 +168,6 @@ public class GameScript : MonoBehaviour
     {
         float alphaChange = MasterScript.CalculateMatchRewards(leaderboardScript.alpha, leaderboardScript.bravo, false, MasterScript.matchPower);
         float bravoChange = -alphaChange;
-        alphaChangeText.GetComponent<TextMeshProUGUI>().text = "" + Mathf.Round(alphaChange);
-        alphaChangeText.SetActive(true);
-        bravoChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(bravoChange);
-        bravoChangeText.SetActive(true);
 
         // Update Scores
         UpdateScores(alphaChange, bravoChange, false);
@@ -191,6 +175,31 @@ public class GameScript : MonoBehaviour
 
     public void UpdateScores(float alphaChange, float bravoChange, bool alphaWon)
     {
+        // Keep scores accurate with uneven teams
+        int playerCount = leaderboardScript.alpha.Count;
+        if (leaderboardScript.bravo.Count < playerCount) playerCount = leaderboardScript.bravo.Count;
+
+        alphaChange *= playerCount;
+        alphaChange /= leaderboardScript.alpha.Count;
+        bravoChange *= playerCount;
+        bravoChange /= leaderboardScript.bravo.Count;
+
+        // Update text
+        if (alphaWon)
+        {
+            alphaChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(alphaChange);
+            alphaChangeText.SetActive(true);
+            bravoChangeText.GetComponent<TextMeshProUGUI>().text = "" + Mathf.Round(bravoChange);
+            bravoChangeText.SetActive(true);
+        }
+        else
+        {
+            alphaChangeText.GetComponent<TextMeshProUGUI>().text = "" + Mathf.Round(alphaChange);
+            alphaChangeText.SetActive(true);
+            bravoChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(bravoChange);
+            bravoChangeText.SetActive(true);
+        }
+
         // Apply score changes
         for (int i = 0; i < leaderboardScript.alpha.Count; i++)
         {

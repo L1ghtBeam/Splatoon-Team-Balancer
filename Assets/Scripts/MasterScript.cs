@@ -133,12 +133,20 @@ public class MasterScript : MonoBehaviour
         {
             bravoScore += bravo[i].Score;
         }
+        // Find count of smallest team
+        int minPlayers = alpha.Count;
+        if (bravo.Count < minPlayers) minPlayers = bravo.Count;
+        // Find count of biggest team
+        int maxPlayers = alpha.Count;
+        if (bravo.Count > maxPlayers) maxPlayers = bravo.Count;
 
-        alphaScore /= 4;
-        bravoScore /= 4;
+        // Get average of scores
+        alphaScore /= minPlayers;
+        bravoScore /= minPlayers;
 
         // Predict outcome
-        float alphaChance = 1 / (1 + Mathf.Pow(10, (bravoScore - alphaScore) / 400));
+        float alphaChance = 1 / (1 + Mathf.Pow(10, (bravoScore - alphaScore) / (400 * maxPlayers)));
+        Debug.Log("Alpha had a " + alphaChance * 100 + "% change of winning");
 
         if (alphaWon)
         {
