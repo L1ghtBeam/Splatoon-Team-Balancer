@@ -189,12 +189,12 @@ public class GameScript : MonoBehaviour
         {
             alphaChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(alphaChange);
             alphaChangeText.SetActive(true);
-            bravoChangeText.GetComponent<TextMeshProUGUI>().text = "" + Mathf.Round(bravoChange);
+            bravoChangeText.GetComponent<TextMeshProUGUI>().text = "-" + Mathf.Abs(Mathf.Round(bravoChange));
             bravoChangeText.SetActive(true);
         }
         else
         {
-            alphaChangeText.GetComponent<TextMeshProUGUI>().text = "" + Mathf.Round(alphaChange);
+            alphaChangeText.GetComponent<TextMeshProUGUI>().text = "-" + Mathf.Abs(Mathf.Round(alphaChange));
             alphaChangeText.SetActive(true);
             bravoChangeText.GetComponent<TextMeshProUGUI>().text = "+" + Mathf.Round(bravoChange);
             bravoChangeText.SetActive(true);
