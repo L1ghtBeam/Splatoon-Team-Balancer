@@ -120,7 +120,7 @@ public class GameScript : MonoBehaviour
         }
         else if (System.DateTime.Now.DayOfWeek == System.DayOfWeek.Tuesday)
         {
-            map = MasterScript.rainMaps[Random.Range(0, 8)];
+            map = MasterScript.zoneMaps[Random.Range(0, 8)];
             mode = "Splat Zones";
         }
         else if (System.DateTime.Now.DayOfWeek == System.DayOfWeek.Wednesday)
