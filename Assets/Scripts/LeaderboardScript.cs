@@ -45,7 +45,7 @@ public class LeaderboardScript : MonoBehaviour
         }
     }
 
-    void UpdateLeaderboard()
+    public void UpdateLeaderboard()
     {
         // Delete old text objects
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Temp");
@@ -58,11 +58,13 @@ public class LeaderboardScript : MonoBehaviour
         for (int i = 0; i < MasterScript.playerData.Count; i++)
         {
             // Find location
-            Vector3 pos = new Vector3(samplePlayerText.transform.localPosition.x, samplePlayerText.transform.localPosition.y + i * -150, samplePlayerText.transform.localPosition.z);
+            RectTransform rect = samplePlayerText.GetComponent<RectTransform>();
+            Vector2 pos = new Vector2(rect.anchoredPosition.x, rect.anchoredPosition.y + (i * -150));
 
             // Make Object
             GameObject playerText = Instantiate(samplePlayerText, pos, samplePlayerText.transform.rotation);
-            playerText.transform.SetParent(gameObject.transform, false);
+            
+            playerText.transform.SetParent(gameObject.transform.Find("Players").transform, false);
             playerText.tag = "Temp";
 
             // Change Text
