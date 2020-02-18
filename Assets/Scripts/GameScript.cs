@@ -120,8 +120,8 @@ public class GameScript : MonoBehaviour
         }
         else if (System.DateTime.Now.DayOfWeek == System.DayOfWeek.Tuesday)
         {
-            map = MasterScript.zoneMaps[Random.Range(0, 8)];
-            mode = "Splat Zones";
+            map = MasterScript.towerMaps[Random.Range(0, 8)];
+            mode = "Tower Control";
         }
         else if (System.DateTime.Now.DayOfWeek == System.DayOfWeek.Wednesday)
         {
@@ -130,8 +130,8 @@ public class GameScript : MonoBehaviour
         }
         else if (System.DateTime.Now.DayOfWeek == System.DayOfWeek.Thursday)
         {
-            map = MasterScript.towerMaps[Random.Range(0, 8)];
-            mode = "Tower Control";
+            map = MasterScript.zoneMaps[Random.Range(0, 8)];
+            mode = "Splat Zones";
         }
         else
         {
