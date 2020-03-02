@@ -245,41 +245,41 @@ public class MasterScript : MonoBehaviour
         mapData.Add(new MapData { Name = "Ancho-V Games", Image = Resources.Load<Sprite>("Sprites/S2_Stage_Ancho-V_Games") });
         mapData.Add(new MapData { Name = "Skipper Pavilion", Image = Resources.Load<Sprite>("Sprites/S2_Stage_Skipper_Pavilion") });
 
-        rainMaps.Add(4);
-        rainMaps.Add(5);
-        rainMaps.Add(8);
-        rainMaps.Add(10);
-        rainMaps.Add(11);
-        rainMaps.Add(14);
-        rainMaps.Add(19);
-        rainMaps.Add(22);
+        rainMaps.Add(0);
+        rainMaps.Add(1);
+        rainMaps.Add(3);
+        rainMaps.Add(13);
+        rainMaps.Add(15);
+        rainMaps.Add(17);
+        rainMaps.Add(18);
+        rainMaps.Add(20);
 
-        zoneMaps.Add(2);
-        zoneMaps.Add(3);
-        zoneMaps.Add(6);
-        zoneMaps.Add(9);
-        zoneMaps.Add(10);
-        zoneMaps.Add(13);
-        zoneMaps.Add(18);
-        zoneMaps.Add(21);
+        zoneMaps.Add(0);
+        zoneMaps.Add(1);
+        zoneMaps.Add(5);
+        zoneMaps.Add(7);
+        zoneMaps.Add(11);
+        zoneMaps.Add(12);
+        zoneMaps.Add(17);
+        zoneMaps.Add(22);
 
-        towerMaps.Add(0);
-        towerMaps.Add(2);
-        towerMaps.Add(3);
-        towerMaps.Add(5);
-        towerMaps.Add(7);
-        towerMaps.Add(12);
-        towerMaps.Add(17);
-        towerMaps.Add(20);
+        towerMaps.Add(4);
+        towerMaps.Add(6);
+        towerMaps.Add(8);
+        towerMaps.Add(9);
+        towerMaps.Add(10);
+        towerMaps.Add(16);
+        towerMaps.Add(19);
+        towerMaps.Add(21);
 
-        clamMaps.Add(0);
-        clamMaps.Add(1);
-        clamMaps.Add(11);
-        clamMaps.Add(13);
-        clamMaps.Add(15);
-        clamMaps.Add(16);
-        clamMaps.Add(19);
-        clamMaps.Add(20);
+        clamMaps.Add(2);
+        clamMaps.Add(4);
+        clamMaps.Add(8);
+        clamMaps.Add(9);
+        clamMaps.Add(10);
+        clamMaps.Add(12);
+        clamMaps.Add(14);
+        clamMaps.Add(21);
     }
 }
 
